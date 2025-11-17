@@ -6,7 +6,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-API_URL = f"https://ble.ir/api/{BOT_TOKEN}"
+API_URL = f"https://tapi.bale.ai/bot{BOT_TOKEN}"
 
 DATA_FILE = "config.json"
 
@@ -60,7 +60,7 @@ def webhook():
             send_message(chat_id, "Invalid input.")
             return "ok"
 
-        config["source_id"] = int(text)   # <-- YOU WILL ENTER THIS INSIDE THE CHAT
+        config["source_id"] = int(text)
         config["state"] = "WAIT_TARGET"
         save_config(config)
 
@@ -72,7 +72,7 @@ def webhook():
             send_message(chat_id, "Invalid input.")
             return "ok"
 
-        config["target_id"] = int(text)   # <-- YOU WILL ENTER THIS INSIDE THE CHAT
+        config["target_id"] = int(text)
         config["state"] = "READY"
         save_config(config)
 
