@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 TOKEN = "7452741:Xfzl_ojiKVoA7n5BlR3quePZNCasvlQIPYg"
 SOURCE_USER_ID = +989991641701
-TARGET_CHAT_ID = +989381111738
+TARGET_CHAT_ID = +989387522360
 API = f"https://tapi.bale.ai/bot{TOKEN}/"
 
 @app.route("/", methods=["POST"])
@@ -27,3 +27,4 @@ def webhook():
 
 if __name__ == "__main__":
     app.run(port=5000)
+
